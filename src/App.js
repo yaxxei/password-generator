@@ -28,8 +28,17 @@ function App() {
       if (character && checkboxes[3].checked === true) {
         character += 'abcdefghijklmnopqrstuvwxyz'
       }
-
+    } 
+    if (checkboxes[1].checked === true) {
+      character += '1234567890'
+    } 
+    if (checkboxes[2].checked === true) {
+      character += 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
+    } 
+    if (checkboxes[3].checked === true) {
+      character += 'abcdefghijklmnopqrstuvwxyz'
     }
+
     let password = ''
     for (let i = 0; i < length; i++) {
       password += character.charAt(Math.floor(Math.random() * character.length))
