@@ -49,8 +49,9 @@ body {
   row-gap: 20px;
 }
 
-.password-lenght {
-  display: flex;
+.password-length {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
 }
 
 .slider-length {
@@ -58,8 +59,8 @@ body {
   height: 40px;
 }
 
-.input-lenghth {
-  width: 70px;
+.input-length {
+  width: 80px;
   height: 40px;
   align-self: center;
   margin-left: 20px;

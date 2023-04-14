@@ -67,11 +67,11 @@ function App() {
           onChange={handleChangePasswordText} />
 
         <div className='editor'>
-          <div className='password-lenght'>
+          <div className='password-length'>
             <input className='slider-length' type='range' min='1' max='20' step='1'
               value={length}
               onChange={handleChangeLength} />
-            <input className='input-lenghth' type='text'
+            <input className='input-length' type='text'
               value={length}
               onChange={handleChangeLength} />
           </div>
