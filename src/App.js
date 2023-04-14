@@ -30,7 +30,6 @@ function App() {
       }
 
     }
-    console.log(character);
     let password = ''
     for (let i = 0; i < length; i++) {
       password += character.charAt(Math.floor(Math.random() * character.length))
