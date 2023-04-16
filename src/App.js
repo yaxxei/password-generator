@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import './App.css';
 import icon from './images/tabler-icon-refresh.svg'
+import copy from './images/tabler-icon-copy.svg'
 
 function App() {
 
@@ -12,8 +13,9 @@ function App() {
   ]
 
   const [password, setPassword] = useState('Password will be here')
-  const [length, setLength] = useState(1)
+  const [length, setLength] = useState(8)
   const [checkboxes, setCheckboxes] = useState(initCheckboxes)
+  const [isActive, setIsActive] = useState(false)
 
   const generatePassword = (length) => {
     let character = ''
@@ -28,13 +30,13 @@ function App() {
       if (character && checkboxes[3].checked === true) {
         character += 'abcdefghijklmnopqrstuvwxyz'
       }
-    } 
+    }
     if (checkboxes[1].checked === true) {
       character += '1234567890'
-    } 
+    }
     if (checkboxes[2].checked === true) {
       character += 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
-    } 
+    }
     if (checkboxes[3].checked === true) {
       character += 'abcdefghijklmnopqrstuvwxyz'
     }
@@ -48,6 +50,21 @@ function App() {
 
   const handleClickPasswordText = () => {
     setPassword(generatePassword(length))
+    setIsActive(!isActive)
+    setTimeout(() => {
+      setIsActive(false)
+    }, 300)
+  }
+
+  const handleCopyPassword = async () => {
+    try {
+      if (password === 'Password will be here') {
+        alert('You have not generated a password')
+      }
+      await navigator.clipboard.writeText(password).then(() => alert('Password has been copied'))
+    } catch (e) {
+      console.error('Copy error: ', e)
+    }
   }
 
   const handleChangePasswordText = () => {
@@ -69,11 +86,17 @@ function App() {
   return (
     <div className="App">
       <div className='wrapper'>
-        <img src={icon} alt='none' className='regenerate' onClick={handleClickPasswordText} />
+        <div className='password-output'>
+          <img src={icon} alt='none' className={`generate ${isActive ? 'rotate' : ''}`} onClick={handleClickPasswordText} />
 
-        <input className='password' type='text'
-          value={password}
-          onChange={handleChangePasswordText} />
+          <div className='password-text'>
+            <input className='password' type='text'
+              value={password}
+              onChange={handleChangePasswordText} />
+            <img className='copy' src={copy} alt='none' 
+              onClick={handleCopyPassword} />
+          </div>
+        </div>
 
         <div className='editor'>
           <div className='password-length'>

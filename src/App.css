@@ -26,8 +26,32 @@ body {
   align-self: center;
 }
 
-.regenerate {
+.password-output {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  margin-right: 20px;
+}
+
+.generate {
   cursor: pointer;
+  margin-right: 20px;
+}
+
+.generate.rotate {
+  animation: .3s linear rotate;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(-180deg);
+  }
+}
+
+.password-text {
+  position: relative;
 }
 
 .password {
@@ -42,6 +66,15 @@ body {
   border-radius: 7px;
   border: none;
   outline: none;
+}
+
+.copy {
+  cursor: pointer;
+  width: 30px;
+
+  position: absolute;
+  top: 2px;
+  right: 7px;
 }
 
 .editor {
