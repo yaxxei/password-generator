@@ -20,16 +20,7 @@ function App() {
   const generatePassword = (length) => {
     let character = ''
     if (checkboxes[0].checked === true) {
-      character = '!@#$%^&*()'
-      if (character && checkboxes[1].checked === true) {
-        character += '1234567890'
-      }
-      if (character && checkboxes[2].checked === true) {
-        character += 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
-      }
-      if (character && checkboxes[3].checked === true) {
-        character += 'abcdefghijklmnopqrstuvwxyz'
-      }
+      character += '!@#$%^&*()'
     }
     if (checkboxes[1].checked === true) {
       character += '1234567890'
