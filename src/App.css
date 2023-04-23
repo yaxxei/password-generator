@@ -68,6 +68,43 @@ body {
   outline: none;
 }
 
+.copy-box {
+  display: grid;
+}
+
+.copied {
+  background-color: #fff;
+  color: #000;
+  padding: 10px 15px;
+  border-radius: 5px;
+
+  position: absolute;
+  top: -60px;
+  right: 0;
+
+  animation: .2s linear copiedOpacity;
+}
+
+.copied:after {
+  content: '';
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-top: 10px solid #fff;
+
+  position: absolute;
+  bottom: -9px;
+  right: 10px;
+}
+
+@keyframes copiedOpacity {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
 .copy {
   cursor: pointer;
   width: 30px;

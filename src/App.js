@@ -47,15 +47,27 @@ function App() {
     }, 300)
   }
 
+  const [showCopied, setShowCopied] = useState(false)
+  const [showCantCopied, setShowCantCopied] = useState(false)
+
   const handleCopyPassword = async () => {
     try {
       if (password === 'Password will be here') {
-        alert('You have not generated a password')
+        setShowCantCopied(true)
+        setTimeout(() => {
+          setShowCantCopied(false)
+        }, 1000)
+        return
       }
-      await navigator.clipboard.writeText(password).then(() => alert('Password has been copied'))
+      await navigator.clipboard.writeText(password)
+      setShowCopied(true)
+      setTimeout(() => {
+        setShowCopied(false)
+      }, 1000)
     } catch (e) {
       console.error('Copy error: ', e)
     }
+    return null
   }
 
   const handleChangePasswordText = () => {
@@ -84,8 +96,14 @@ function App() {
             <input className='password' type='text'
               value={password}
               onChange={handleChangePasswordText} />
-            <img className='copy' src={copy} alt='none' 
-              onClick={handleCopyPassword} />
+            <div className='copy-box'>
+              {
+                showCopied && <p className='copied'>Copied!</p>
+                || showCantCopied && <p className='copied'>You have not generated a password!</p>
+              }
+              <img className='copy' src={copy} alt='none' 
+                onClick={handleCopyPassword} />
+            </div>
           </div>
         </div>
 
