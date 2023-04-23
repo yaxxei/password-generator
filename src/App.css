@@ -68,10 +68,6 @@ body {
   outline: none;
 }
 
-.copy-box {
-  display: grid;
-}
-
 .copied {
   background-color: #fff;
   color: #000;

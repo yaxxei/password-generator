@@ -96,14 +96,12 @@ function App() {
             <input className='password' type='text'
               value={password}
               onChange={handleChangePasswordText} />
-            <div className='copy-box'>
-              {
-                showCopied && <p className='copied'>Copied!</p>
-                || showCantCopied && <p className='copied'>You have not generated a password!</p>
-              }
-              <img className='copy' src={copy} alt='none' 
-                onClick={handleCopyPassword} />
-            </div>
+            {
+              showCopied && <p className='copied'>Copied!</p>
+              || showCantCopied && <p className='copied'>You have not generated a password!</p>
+            }
+            <img className='copy' src={copy} alt='none'
+              onClick={handleCopyPassword} />
           </div>
         </div>
 
