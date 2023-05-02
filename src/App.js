@@ -2,6 +2,8 @@ import { useState } from 'react';
 import './App.css';
 import icon from './images/tabler-icon-refresh.svg'
 import copy from './images/tabler-icon-copy.svg'
+import arrow from './images/arrow.png'
+import select from './images/select.png'
 
 function App() {
 
@@ -56,14 +58,14 @@ function App() {
         setShowCantCopied(true)
         setTimeout(() => {
           setShowCantCopied(false)
-        }, 1000)
+        }, 1500)
         return
       }
       await navigator.clipboard.writeText(password)
       setShowCopied(true)
       setTimeout(() => {
         setShowCopied(false)
-      }, 1000)
+      }, 1500)
     } catch (e) {
       console.error('Copy error: ', e)
     }
@@ -90,6 +92,16 @@ function App() {
     <div className="App">
       <div className='wrapper'>
         <div className='password-output'>
+          <div className='help1'>
+            <img className='arrow' src={arrow} alt='none'/>
+            <p className='help-text'>Click here to generate password</p>
+          </div>
+
+          <div className='help2'>
+            <img className='arrow' src={arrow} alt='none'/>
+            <p className='help-text'>Click here to copy password</p>
+          </div>
+
           <img src={icon} alt='none' className={`generate ${isActive ? 'rotate' : ''}`} onClick={handleClickPasswordText} />
 
           <div className='password-text'>
@@ -106,6 +118,16 @@ function App() {
         </div>
 
         <div className='editor'>
+          <div className='help3'>
+            <img className='select' src={select} alt='none'/>
+            <p className='help-text'>Here you can change your password settings</p>
+          </div>
+
+          <div className='help4'>
+            <img className='arrow' src={arrow} alt='none'/>
+            <p className='help-text'>And here you can change your password length</p>
+          </div>
+
           <div className='password-length'>
             <input className='slider-length' type='range' min='1' max='20' step='1'
               value={length}

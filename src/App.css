@@ -196,3 +196,74 @@ body {
 .lowercase h1 {
   margin-left: 20px;
 }
+
+
+
+.help1 {
+  position: absolute;
+  top: 130px;
+  left: 0;
+}
+
+.help1 .help-text {
+  font-family: 'Edo SZ', sans-serif;
+  font-size: 20px;
+  position: absolute;
+  top: 30px;
+  left: 130px;
+}
+
+.help2 {
+  position: absolute;
+  top: 190px;
+  left: 410px;
+}
+
+.help2 .arrow {
+  width: 400px;
+  transform: scaleX(-1);
+}
+
+.help2 .help-text {
+  font-family: 'Edo SZ', sans-serif;
+  font-size: 20px;
+  position: absolute;
+  top: 20px;
+  left: 80px;
+}
+
+.help3 {
+  position: absolute;
+  bottom: 10px;
+  right: 90px;
+}
+
+.help3 .select {
+  width: 700px;
+}
+
+.help3 .help-text {
+  font-family: 'Edo SZ', sans-serif;
+  font-size: 20px;
+  position: absolute;
+  bottom: 320px;
+  right: 150px;
+}
+
+.help4 {
+  position: absolute;
+  top: 250px;
+  right: 70px;
+}
+
+.help4 .arrow {
+  width: 300px;
+  transform: scaleX(-1);
+}
+
+.help4 .help-text {
+  font-family: 'Edo SZ', sans-serif;
+  font-size: 20px;
+  position: absolute;
+  top: 0;
+}
