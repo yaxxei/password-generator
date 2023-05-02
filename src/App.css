@@ -37,6 +37,7 @@ body {
 .generate {
   cursor: pointer;
   margin-right: 20px;
+  z-index: 1;
 }
 
 .generate.rotate {
@@ -54,6 +55,7 @@ body {
 
 .password-text {
   position: relative;
+  z-index: 1;
 }
 
 .password {
@@ -120,6 +122,7 @@ body {
 .password-length {
   display: grid;
   grid-template-columns: 1fr 1fr;
+  z-index: 1;
 }
 
 .slider-length {
@@ -145,6 +148,7 @@ body {
 .choice {
   display: grid;
   grid-template-columns: 1fr 1fr;
+  z-index: 1;
 }
 
 .symbols {
@@ -203,7 +207,6 @@ body {
 
 .help1 {
   position: absolute;
-  /* top: 130px;*/
   top: -340px;
   left: -110px;
 }
