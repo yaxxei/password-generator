@@ -120,12 +120,12 @@ function App() {
         <div className='editor'>
           <div className='help3'>
             <img className='select' src={select} alt='none'/>
-            <p className='help-text'>Here you can change your password settings</p>
+            <p className='help-text'>Here you can change password settings</p>
           </div>
 
           <div className='help4'>
             <img className='arrow' src={arrow} alt='none'/>
-            <p className='help-text'>And here you can change your password length</p>
+            <p className='help-text'>And here you can change password length</p>
           </div>
 
           <div className='password-length'>
