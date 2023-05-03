@@ -240,20 +240,20 @@ body {
 
 .help3 {
   position: absolute;
-  top: -110px;
-  right: -10px;
+  top: 90px;
+  right: 55px;
 }
 
 .help3 .select {
-  width: 700px;
+  width: 570px;
 }
 
 .help3 .help-text {
   font-family: 'Edo SZ', sans-serif;
   font-size: 20px;
   position: absolute;
-  bottom: 320px;
-  right: 170px;
+  bottom: -20px;
+  right: 100px;
 }
 
 .help4 {
@@ -272,4 +272,5 @@ body {
   font-size: 20px;
   position: absolute;
   top: 0;
+  right: 100px;
 }

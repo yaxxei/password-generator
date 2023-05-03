@@ -125,7 +125,7 @@ function App() {
 
           <div className='help4'>
             <img className='arrow' src={arrow} alt='none'/>
-            <p className='help-text'>And here you can change password length</p>
+            <p className='help-text'>And here you can set password length</p>
           </div>
 
           <div className='password-length'>
